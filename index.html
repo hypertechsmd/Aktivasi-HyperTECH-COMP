@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>HyperTECH Activation</title>
-</head>
+<head></head>
 <body>
-  <hr>
-  <pre>if (-not $args) {
+  <pre>
+    if (-not $args) {
     Write-Host ''
     Write-Host 'Aktivasi HyperTECH COMP erilya' -NoNewline
     Write-Host 'YouTube @Jacky_GT4' -ForegroundColor Red
@@ -120,7 +117,6 @@
     $FilePaths = @("$env:SystemRoot\Temp\MAS*.cmd", "$env:USERPROFILE\AppData\Local\Temp\MAS*.cmd")
     foreach ($FilePath in $FilePaths) { Get-Item $FilePath -ErrorAction SilentlyContinue | Remove-Item }
 } @args
-    
 </pre>
 </body>
 </html>
