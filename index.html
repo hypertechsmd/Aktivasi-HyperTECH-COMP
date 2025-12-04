@@ -91,7 +91,7 @@
 
     $rand = [Guid]::NewGuid().Guid
     $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match 'S-1-5-32-544')
-    $FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\MAS_$rand.cmd" } else { "$env:USERPROFILE\AppData\Local\Temp\MAS_$rand.cmd" }
+    $FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\aktivasi.cmd" } else { "$env:USERPROFILE\AppData\Local\Temp\aktivasi.cmd" }
     Set-Content -Path $FilePath -Value "@::: $rand `r`n$response"
     CheckFile $FilePath
 
@@ -114,7 +114,7 @@
     }	
     CheckFile $FilePath
 
-    $FilePaths = @("$env:SystemRoot\Temp\MAS*.cmd", "$env:USERPROFILE\AppData\Local\Temp\MAS*.cmd")
+    $FilePaths = @("$env:SystemRoot\Tempaktivasi.cmd", "$env:USERPROFILE\AppData\Local\Temp\aktivasi.cmd")
     foreach ($FilePath in $FilePaths) { Get-Item $FilePath -ErrorAction SilentlyContinue | Remove-Item }
 } @args
 </pre>
