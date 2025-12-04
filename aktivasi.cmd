@@ -392,8 +392,10 @@ if not defined _ohookgo set _tsforgego=1
 
 echo:
 echo:
-call :dk_color3 %_Red% "                   AKTIVASI RETAIL - HYPERTECH COMP GERILYA                   "
-call :dk_color3 %_Red% "                             Aktivasi All-in-One                   "
+call :dk_color3 %_LightYellow% "                   AKTIVASI RETAIL - HYPERTECH COMP GERILYA                   "
+call :dk_color3 %_Green% "                             dibuat oleh Owner HyperTECH COMP Gerilya                   "
+call :dk_color3 %_Red% "                             YouTube @Jacky_GT4                   "
+call :dk_color3 %_Blue% "                             Aktivasi All-in-One                   "
 echo:       ______________________________________________________________
 echo:
 if defined _hwidgo (
@@ -19413,3 +19415,4 @@ if ($appIdsList.Count -gt 0) {
 ::========================================================================================================================================
 ::
 :: Leave empty line below
+
