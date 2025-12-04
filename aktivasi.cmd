@@ -394,7 +394,7 @@ echo:
 echo:
 call :dk_color3 %_White% "                   AKTIVASI RETAIL - HYPERTECH COMP GERILYA                   "
 call :dk_color3 %_Green% "                   dibuat oleh Owner HyperTECH COMP Gerilya                   "
-call :dk_color3 %_Red% "                                YouTube @Jacky_GT4                   "
+call :dk_color3 %_Red% "                              YouTube @Jacky_GT4                   "
 echo:       ______________________________________________________________
 echo:
 if defined _hwidgo (
@@ -19414,3 +19414,4 @@ if ($appIdsList.Count -gt 0) {
 ::========================================================================================================================================
 ::
 :: Leave empty line below
+
