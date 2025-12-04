@@ -1,13 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>HyperTECH Activation</title>
-</head>
-<body>
-  <h1>HyperTECH COMP Activation</h1>
-  <p>Buka Powershell dan Run as Administrator</p>
-  <p>lalu copy paste dibawah ini: </p>
-  <p> irm https://aktivasi-hypertech.pages.dev/get.ps1 | iex </p>
-</body>
-</html>
+Write-Host ""
+Write-Host "HyperTECH COMP Gerilya Script Downloader" -ForegroundColor Cyan
+Write-Host ""
+
+# URL file CMD lo
+$URL = "https://raw.githubusercontent.com/hypertechsmd/Aktivasi-HyperTECH-COMP/main/aktivasi.cmd"
+
+# Lokasi temp file
+$rand = [Guid]::NewGuid().Guid
+$FilePath = "$env:TEMP\HTC_$rand.cmd"
+
+Write-Host "Mengunduh script..." -ForegroundColor Yellow
+
+try {
+    $response = Invoke-RestMethod -Uri $URL -UseBasicParsing
+}
+catch {
+    Write-Host "Gagal mengunduh file!" -ForegroundColor Red
+    Write-Host $_.Exception.Message
+    exit
+}
+
+# Simpan ke file CMD temp
+Set-Content -Path $FilePath -Value $response -Encoding ASCII
+Write-Host "Download selesai." -ForegroundColor Green
+
+# Jalankan script CMD
+Write-Host "Menjalankan script..." -ForegroundColor Cyan
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c `"$FilePath`"" -Verb RunAs -Wait
+
+# Hapus file temp
+Remove-Item $FilePath -ErrorAction SilentlyContinue
+
+Write-Host ""
+Write-Host "Selesai. Script telah dijalankan." -ForegroundColor Green
+Write-Host ""
