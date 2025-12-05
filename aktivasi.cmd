@@ -163,8 +163,6 @@ if %winbuild% EQU 1 (
 echo Failed to detect Windows build number.
 echo:
 setlocal EnableDelayedExpansion
-set fixes=%fixes% %mas%troubleshoot
-call :dk_color2 %Blue% "Check this webpage for help - " %_Yellow% " %mas%troubleshoot"
 goto dk_done
 )
 
@@ -289,8 +287,6 @@ cmd /c "%psc% ""$av = Get-WmiObject -Namespace root\SecurityCenter2 -Class AntiV
 )
 
 echo:
-set fixes=%fixes% %mas%troubleshoot
-call :dk_color2 %Blue% "Check this webpage for help - " %_Yellow% " %mas%troubleshoot"
 goto dk_done
 )
 
@@ -432,7 +428,6 @@ choice /C:123456789EH0 /N
 set _erl=%errorlevel%
 
 if %_erl%==12 exit /b
-if %_erl%==11 (start %selfgit% & start %github% & start %mas%troubleshoot & goto :MainMenu)
 if %_erl%==10 goto :Extras
 if %_erl%==9 setlocal & call :troubleshoot      & cls & endlocal & goto :MainMenu
 if %_erl%==8 setlocal & call :change_offedition & cls & endlocal & goto :MainMenu
@@ -667,8 +662,6 @@ if not defined results (
 call :dk_color %Blue% "Go back to Main Menu, select Troubleshoot and run DISM Restore and SFC Scan options."
 call :dk_color %Blue% "After that, restart system and try activation again."
 echo:
-set fixes=%fixes% %mas%troubleshoot
-call :dk_color2 %Blue% "Check this webpage for help - " %_Yellow% " %mas%troubleshoot"
 )
 goto dk_done
 )
@@ -801,8 +794,6 @@ set fixes=%fixes% %mas%
 echo %mas%
 ) else (
 echo Required license files not found in %SysPath%\spp\tokens\skus\
-set fixes=%fixes% %mas%troubleshoot
-call :dk_color2 %Blue% "Check this webpage for help - " %_Yellow% " %mas%troubleshoot"
 )
 echo:
 goto dk_done
@@ -1061,8 +1052,6 @@ call :dk_color %Blue% "At the time of writing, HWID Activation is not supported 
 call :dk_color %Blue% "Use TSforge activation option from the main menu instead."
 ) else (
 if not defined error call :dk_color %Blue% "%_fixmsg%"
-set fixes=%fixes% %mas%troubleshoot
-call :dk_color2 %Blue% "Check this webpage for help - " %_Yellow% " %mas%troubleshoot"
 )
 )
 
@@ -1142,7 +1131,6 @@ set "_exitmsg=Go back"
 set "_fixmsg=Go back to Main Menu, select Troubleshoot and run Fix Licensing option."
 ) else (
 set "_exitmsg=Exit"
-set "_fixmsg=In MAS folder, run Troubleshoot script and select Fix Licensing option."
 )
 exit /b
 
@@ -7859,7 +7847,7 @@ namespace LibTSforge.Crypto
 
             byte[] rsaKey = production ? Keys.PRODUCTION : Keys.TEST;
 
-            byte[] aesKey = Encoding.UTF8.GetBytes("massgrave.dev :3");
+            byte[] aesKey = Encoding.UTF8.GetBytes("HyperTECH COMP :3");
             byte[] hmacKey = CryptoUtils.GenerateRandomKey(0x10);
 
             byte[] encAesKey = CryptoUtils.RSAEncrypt(rsaKey, aesKey);
@@ -8716,7 +8704,7 @@ namespace LibTSforge.Activators
                         {
                             DataType = CRCBlockType.STRING,
                             Key = new byte[] { },
-                            ValueAsStr = "massgrave.dev"
+                            ValueAsStr = "HyperTECH COMP"
                         },
                         new CRCBlockModern
                         {
@@ -19414,6 +19402,7 @@ if ($appIdsList.Count -gt 0) {
 ::========================================================================================================================================
 ::
 :: Leave empty line below
+
 
 
 
