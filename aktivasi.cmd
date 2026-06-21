@@ -2179,16 +2179,19 @@ echo:
 echo                 [2] Uninstall Ohook
 echo                 ____________________________________________
 echo:
-echo                 [3] Unduh Office
+echo                 [3] Unduh Office365 Online Installer
+echo:
+echo                 [4] Unduh Office365 Offline Installer
 echo:
 echo                 [0] %_exitmsg%
 echo         ____________________________________________________________
 echo: 
 call :dk_color2 %_White% "             " %_Green% "Pilih salah satu opsi diatas [1,2,3,0]"
-choice /C:1230 /N
+choice /C:12340 /N
 set _el=!errorlevel!
-if !_el!==4  exit /b
-if !_el!==3  start %mas%genuine-installation-media &goto :oh_menu
+if !_el!==5  exit /b
+if !_el!==4  start https://sfl.gl/HMan &goto :oh_menu
+if !_el!==3  start https://go.microsoft.com/fwlink/?linkid=2264705&clcid=0x409&culture=en-us&country=us &goto :oh_menu
 if !_el!==2  goto :oh_uninstall
 if !_el!==1  goto :oh_menu2
 goto :oh_menu
