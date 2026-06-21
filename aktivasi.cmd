@@ -37,8 +37,8 @@
 
 ::============================================================================
 ::
-::   YouTube: @Jacky_GT4
-::      Store: HyperTECH COMP Gerilya
+::   YouTube: @DangabSkuy
+::      DANGABSKUY.MY.ID
 ::
 ::============================================================================
 
@@ -390,7 +390,7 @@ echo:
 echo:
 call :dk_color3 %_White% "                   AKTIVASI RETAIL - HYPERTECH COMP GERILYA                   "
 call :dk_color3 %_Green% "                   dibuat oleh Owner HyperTECH COMP Gerilya                   "
-call :dk_color3 %_Red% "                             YouTube @Jacky_GT4                             "
+call :dk_color3 %_Red% "                             YouTube @DangabSkuy                             "
 echo:       ______________________________________________________________
 echo:
 if defined _hwidgo (
